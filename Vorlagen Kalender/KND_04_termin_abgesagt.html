@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Termin storniert</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="x-apple-disable-message-reformatting">
+</head>
+<body style="margin:0;padding:0;background:#f5f5f5;">
+  <div style="display:none;font-size:1px;line-height:1px;max-height:0;opacity:0;overflow:hidden;mso-hide:all;">
+    Bestätigung: Ihr Termin wurde storniert.
+  </div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;">
+    <tr>
+      <td align="center" style="padding:40px 12px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+               style="max-width:600px;width:100%;background:#ffffff;border:1px solid #e0e0e0;">
+          <tr>
+            <td align="center" style="padding:24px 20px;border-bottom:1px solid #e0e0e0;">
+              <a href="https://www.endlichzuhause.com" target="_blank" rel="noopener" style="text-decoration:none;">
+                <img src="https://storage.googleapis.com/msgsndr/iHm2KuC2Tn9dLi5JmBX4/media/68b83cb1327fb703d89d5061.png"
+                     alt="Endlich zu Hause" width="200" height="60" style="display:block;border:0;height:auto;">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:28px 28px 8px 28px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#333;">
+              <p style="margin:0 0 16px 0;">Hallo {{contact.first_name}},</p>
+              <p style="margin:0 0 16px 0;">Ihr Termin wurde wie gewünscht storniert.</p>
+              <ul style="padding-left:18px;margin:0 0 18px 0;">
+                <li><strong>Gesprächstyp:</strong> {{appointment.title}}</li>
+                <li><strong>Geplanter Termin (storniert):</strong> {{appointment.start_time}}</li>
+                <li><strong>Ort / Kontaktart:</strong> {{appointment.meeting_location}}</li>
+              </ul>
+              <p style="margin:0 0 16px 0;">Wenn Sie weiterhin Interesse haben, buchen Sie gern einen neuen Termin.</p>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 22px 0;">
+                <tr>
+                  <td align="center" bgcolor="#ba0c2f" style="border-radius:4px;">
+                    <a href="https://finanzierung.endlichzuhause.com/termin"
+                       style="display:inline-block;background:#ba0c2f;color:#fff;text-decoration:none;padding:12px 20px;border-radius:4px;font-weight:bold;font-family:Arial,Helvetica,sans-serif;">
+                      Neuen Termin buchen
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:0 0 4px 0;">Viele Grüße<br>{{appointment.user.name}}<br>und Ihr Team von <strong>Endlich zu Hause</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:22px 20px;background:#f9f9f9;border-top:1px solid #e0e0e0;text-align:center;
+                       font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#777;">
+              <strong style="color:#555;">Endlich zu Hause Finanzierungen GmbH</strong><br>
+              Bahnhofstraße 11 c, 21465 Reinbek · Tel: <a href="tel:+49407277940" style="color:#777;text-decoration:none;">040 72 77 94 0</a><br>
+              <a href="mailto:info@endlichzuhause.com" style="color:#777;text-decoration:none;">info@endlichzuhause.com</a> ·
+              <a href="https://www.endlichzuhause.com" style="color:#777;text-decoration:none;">www.endlichzuhause.com</a><br><br>
+              Geschäftsführerin: Sabine Gabriela Schulz · HRB 2871 RE · USt-ID: DE177337083 · Finanzamt Bad Oldesloe
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

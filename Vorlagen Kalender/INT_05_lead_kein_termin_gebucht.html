@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Lead ohne Termin (Kurz)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no,email=no,address=no">
+  <meta name="color-scheme" content="light only">
+  <meta name="supported-color-schemes" content="light">
+</head>
+<body style="margin:0;padding:0;background:#f5f5f5;font-family:Arial,Helvetica,sans-serif;">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;">Lead ohne Termin: {{ contact.name }}</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f5f5f5;">
+    <tr><td align="center" style="padding:20px 12px;">
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:620px;background:#fff;border:1px solid #e5e5e5;">
+        <tr>
+          <td style="padding:14px 18px;border-bottom:1px solid #e5e5e5;font-size:16px;font-weight:bold;color:#222;">Lead ohne Termin</td>
+        </tr>
+        <tr>
+          <td style="padding:18px;font-size:14px;line-height:1.55;color:#333;">
+            <p style="margin:0 0 10px 0;">Hallo {{ user.name }}, ein Lead ohne Termin wurde angelegt.</p>
+            <p style="margin:0 0 6px 0;"><strong>Name:</strong> {{ contact.name }}</p>
+            <p style="margin:0 0 6px 0;"><strong>E-Mail:</strong> <a href="mailto:{{ contact.email }}" style="color:#0b5cab;text-decoration:none;">{{ contact.email }}</a></p>
+            <p style="margin:0 0 6px 0;"><strong>Telefon:</strong> <a href="tel:{{ contact.phone }}" style="color:#0b5cab;text-decoration:none;">{{ contact.phone }}</a></p>
+            <p style="margin:0 0 10px 0;"><strong>Quelle:</strong> {{ source.name }}</p>
+            <p style="margin:12px 0 6px 0;"><strong>Formularangaben:</strong></p>
+
+            <!-- BEGIN: Structured key-value list for form fields -->
+            <table role="presentation" cellspacing="0" cellpadding="0" style="margin:0 0 10px 0;font-size:14px;line-height:1.55;color:#333;">
+              <tr>
+                <td style="padding:2px 12px 2px 0;color:#555;white-space:nowrap;"><strong>Haushaltsnetto (in Zahlen):</strong></td>
+                <td style="padding:2px 0 2px 0;color:#333;">{{ contact.haushaltsnetto_in_zahlen }}</td>
+              </tr>
+              <tr>
+                <td style="padding:2px 12px 2px 0;color:#555;white-space:nowrap;"><strong>Eigenkapital:</strong></td>
+                <td style="padding:2px 0 2px 0;color:#333;">{{ contact.eigenkapital }}</td>
+              </tr>
+              <tr>
+                <td style="padding:2px 12px 2px 0;color:#555;white-space:nowrap;"><strong>Schufa (Insolvenz/Pfändung):</strong></td>
+                <td style="padding:2px 0 2px 0;color:#333;">{{ contact.schufa }}</td>
+              </tr>
+              <tr>
+                <td style="padding:2px 12px 2px 0;color:#555;white-space:nowrap;"><strong>Kaufpreis:</strong></td>
+                <td style="padding:2px 0 2px 0;color:#333;">{{ contact.kaufpreis }}</td>
+              </tr>
+              <tr>
+                <td style="padding:2px 12px 2px 0;color:#555;white-space:nowrap;"><strong>Zeitraum:</strong></td>
+                <td style="padding:2px 0 2px 0;color:#333;">{{ contact.zeitraum }}</td>
+              </tr>
+            </table>
+            <!-- END: Structured key-value list for form fields -->
+
+            <p style="margin:10px 0 12px 0;font-weight:bold;color:#ba0c2f;">Bitte zeitnah kontaktieren.</p>
+            <table role="presentation" cellspacing="0" cellpadding="0" style="margin:4px 0 4px 0;">
+              <tr>
+                <td bgcolor="#ba0c2f" style="border-radius:4px;">
+                  <a href="https://app.osm.marketing/v2/location/{{ location.id }}/contacts/detail/{{ contact.id }}" style="display:inline-block;padding:10px 16px;font-size:13px;font-weight:bold;color:#fff;text-decoration:none;">Im CRM öffnen</a>
+                </td>
+                <td width="8"></td>
+                <td bgcolor="#ededed" style="border-radius:4px;">
+                  <a href="tel:{{ contact.phone }}" style="display:inline-block;padding:10px 14px;font-size:13px;color:#222;text-decoration:none;">Anrufen</a>
+                </td>
+                <td width="8"></td>
+                <td bgcolor="#ededed" style="border-radius:4px;">
+                  <a href="mailto:{{ contact.email }}?subject=R%C3%BCckmeldung" style="display:inline-block;padding:10px 14px;font-size:13px;color:#222;text-decoration:none;">E-Mail senden</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:10px 18px;border-top:1px solid #e5e5e5;font-size:11px;color:#777;">Automatische Lead-Benachrichtigung.</td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

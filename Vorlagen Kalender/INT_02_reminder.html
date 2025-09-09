@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Termin-Erinnerung</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no,email=no,address=no">
+  <meta name="color-scheme" content="light only">
+  <meta name="supported-color-schemes" content="light">
+</head>
+<body style="margin:0;padding:0;background:#f5f5f5;font-family:Arial,Helvetica,sans-serif;">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;">Erinnerung: {{ appointment.title }} um {{ appointment.start_time }}</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f5f5f5;">
+    <tr><td align="center" style="padding:20px 12px;">
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:600px;background:#ffffff;border:1px solid #e5e5e5;">
+        <tr>
+          <td style="padding:14px 18px;border-bottom:1px solid #e5e5e5;font-size:16px;font-weight:bold;color:#222;">Termin-Erinnerung</td>
+        </tr>
+        <tr>
+          <td style="padding:18px;font-size:14px;line-height:1.55;color:#333;">
+            <p style="margin:0 0 10px 0;">Hallo {{ user.name }}, dein Termin beginnt bald:</p>
+            <p style="margin:0 0 6px 0;"><strong>Titel:</strong> {{ appointment.title }}</p>
+            <p style="margin:0 0 6px 0;"><strong>Datum &amp; Uhrzeit:</strong> {{ appointment.start_time }}</p>
+            <p style="margin:0 0 6px 0;"><strong>Ort / Link:</strong> {{ appointment.meeting_location }}</p>
+            <p style="margin:0 0 12px 0;"><strong>Kund*in:</strong> {{ contact.name }}</p>
+            <table role="presentation" cellspacing="0" cellpadding="0" style="margin:14px 0 4px 0;">
+              <tr>
+                <td bgcolor="#ba0c2f" style="border-radius:4px;">
+                  <a href="https://app.osm.marketing/v2/location/{{ location.id }}/contacts/detail/{{ contact.id }}" style="display:inline-block;padding:10px 16px;font-size:13px;font-weight:bold;color:#fff;text-decoration:none;">Im CRM öffnen</a>
+                </td>
+                <td width="8"></td>
+                <td bgcolor="#ededed" style="border-radius:4px;">
+                  <a href="tel:{{ contact.phone }}" style="display:inline-block;padding:10px 14px;font-size:13px;color:#222;text-decoration:none;">Anrufen</a>
+                </td>
+                <td width="8"></td>
+                <td bgcolor="#ededed" style="border-radius:4px;">
+                  <a href="mailto:{{ contact.email }}?subject=Termin%20{{ appointment.title }}" style="display:inline-block;padding:10px 14px;font-size:13px;color:#222;text-decoration:none;">E-Mail senden</a>
+                </td>
+              </tr>
+            </table>
+            <p style="margin:16px 0 0 0;">Viel Erfolg!</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:10px 18px;border-top:1px solid #e5e5e5;font-size:11px;color:#777;">Automatische Erinnerung.</td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>
