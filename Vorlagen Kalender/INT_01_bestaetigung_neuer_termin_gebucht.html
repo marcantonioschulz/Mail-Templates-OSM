@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
   <meta charset="UTF-8">
   <title>Neuer Termin gebucht</title>
@@ -8,9 +8,17 @@
   <meta name="format-detection" content="telephone=no,email=no,address=no">
   <meta name="color-scheme" content="light only">
   <meta name="supported-color-schemes" content="light">
+  <!--[if mso]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
 </head>
 <body style="margin:0;padding:0;background:#f5f5f5;font-family:Arial,Helvetica,sans-serif;">
-  <div style="display:none;max-height:0;overflow:hidden;opacity:0;">Neuer Termin: {{ appointment.title }} · {{ appointment.start_time }}</div>
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;">Neuer Termin: {{appointment.title}} · {{appointment.start_time}}</div>
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f5f5f5;">
     <tr>
       <td align="center" style="padding:20px 12px;">
@@ -20,23 +28,74 @@
           </tr>
           <tr>
             <td style="padding:18px;font-size:14px;line-height:1.55;color:#333;">
-              <p style="margin:0 0 10px 0;">Hallo {{ user.name }}, ein neuer Termin wurde eingetragen:</p>
-              <p style="margin:0 0 6px 0;"><strong>Titel:</strong> {{ appointment.title }}</p>
-              <p style="margin:0 0 6px 0;"><strong>Datum &amp; Uhrzeit:</strong> {{ appointment.start_time }}</p>
-              <p style="margin:0 0 6px 0;"><strong>Ort / Link:</strong> {{ appointment.meeting_location }}</p>
-              <p style="margin:0 0 12px 0;"><strong>Kund*in:</strong> {{ contact.name }} · <a href="tel:{{ contact.phone }}" style="color:#0b5cab;text-decoration:none;">{{ contact.phone }}</a> · <a href="mailto:{{ contact.email }}" style="color:#0b5cab;text-decoration:none;">{{ contact.email }}</a></p>
+              <p style="margin:0 0 10px 0;">Hallo {{user.name}}, ein neuer Termin wurde eingetragen:</p>
+              <p style="margin:0 0 6px 0;"><strong>Titel:</strong> {{appointment.title}}</p>
+              <p style="margin:0 0 6px 0;"><strong>Datum &amp; Uhrzeit:</strong> {{appointment.start_time}}</p>
+              <p style="margin:0 0 6px 0;"><strong>Ort / Link:</strong> {{appointment.meeting_location}}</p>
+              <p style="margin:0 0 12px 0;"><strong>Kund*in:</strong> {{contact.name}} · <a href="tel:{{contact.phone_raw}}" style="color:#0b5cab;text-decoration:none;">{{contact.phone}}</a> · <a href="mailto:{{contact.email}}" style="color:#0b5cab;text-decoration:none;">{{contact.email}}</a></p>
               <table role="presentation" cellspacing="0" cellpadding="0" style="margin:14px 0 4px 0;">
                 <tr>
-                  <td bgcolor="#ba0c2f" style="border-radius:4px;">
-                    <a href="https://app.osm.marketing/v2/location/{{ location.id }}/contacts/detail/{{ contact.id }}" style="display:inline-block;padding:10px 16px;font-size:13px;font-weight:bold;color:#ffffff;text-decoration:none;font-family:Arial,Helvetica,sans-serif;">Im CRM öffnen</a>
+                  <td style="border-radius:4px;">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                                 xmlns:w="urn:schemas-microsoft-com:office:word"
+                                 href="https://app.osm.marketing/v2/location/{{location.id}}/contacts/detail/{{contact.id}}"
+                                 style="height:36px;v-text-anchor:middle;width:180px;"
+                                 arcsize="10%" stroke="f" fillcolor="#ba0c2f">
+                      <w:anchorlock/>
+                      <center style="color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;line-height:16px;mso-line-height-rule:exactly;white-space:nowrap;">
+                        Im CRM öffnen
+                      </center>
+                    </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-- -->
+                    <a href="https://app.osm.marketing/v2/location/{{location.id}}/contacts/detail/{{contact.id}}"
+                       style="display:inline-block;padding:10px 16px;font-size:13px;line-height:16px;mso-line-height-rule:exactly;font-weight:bold;color:#ffffff;text-decoration:none;font-family:Arial,Helvetica,sans-serif;background-color:#ba0c2f;border-radius:4px;white-space:nowrap;mso-padding-alt:10px 16px 10px 16px;">
+                      Im CRM öffnen
+                    </a>
+                    <!--<![endif]-->
                   </td>
                   <td width="8"></td>
-                  <td bgcolor="#ededed" style="border-radius:4px;">
-                    <a href="tel:{{ contact.phone }}" style="display:inline-block;padding:10px 14px;font-size:13px;color:#222;text-decoration:none;font-family:Arial,Helvetica,sans-serif;">Anrufen</a>
+                  <td style="border-radius:4px;">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                                 xmlns:w="urn:schemas-microsoft-com:office:word"
+                                 href="tel:{{contact.phone_raw}}"
+                                 style="height:36px;v-text-anchor:middle;width:120px;"
+                                 arcsize="10%" stroke="f" fillcolor="#ededed">
+                      <w:anchorlock/>
+                      <center style="color:#222222;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;mso-line-height-rule:exactly;white-space:nowrap;">
+                        Anrufen
+                      </center>
+                    </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-- -->
+                    <a href="tel:{{contact.phone_raw}}"
+                       style="display:inline-block;padding:10px 14px;font-size:13px;line-height:16px;mso-line-height-rule:exactly;color:#222;text-decoration:none;font-family:Arial,Helvetica,sans-serif;background-color:#ededed;border-radius:4px;white-space:nowrap;mso-padding-alt:10px 14px 10px 14px;">
+                      Anrufen
+                    </a>
+                    <!--<![endif]-->
                   </td>
                   <td width="8"></td>
-                  <td bgcolor="#ededed" style="border-radius:4px;">
-                    <a href="mailto:{{ contact.email }}?subject=Termin%20{{ appointment.title }}" style="display:inline-block;padding:10px 14px;font-size:13px;color:#222;text-decoration:none;font-family:Arial,Helvetica,sans-serif;">E-Mail senden</a>
+                  <td style="border-radius:4px;">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
+                                 xmlns:w="urn:schemas-microsoft-com:office:word"
+                                 href="mailto:{{contact.email}}?subject=Termin%20{{appointment.title}}"
+                                 style="height:36px;v-text-anchor:middle;width:190px;"
+                                 arcsize="10%" stroke="f" fillcolor="#ededed">
+                      <w:anchorlock/>
+                      <center style="color:#222222;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:16px;mso-line-height-rule:exactly;white-space:nowrap;">
+                        E-Mail senden
+                      </center>
+                    </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-- -->
+                    <a href="mailto:{{contact.email}}?subject=Termin%20{{appointment.title}}"
+                       style="display:inline-block;padding:10px 14px;font-size:13px;line-height:16px;mso-line-height-rule:exactly;color:#222;text-decoration:none;font-family:Arial,Helvetica,sans-serif;background-color:#ededed;border-radius:4px;white-space:nowrap;mso-padding-alt:10px 14px 10px 14px;">
+                      E-Mail senden
+                    </a>
+                    <!--<![endif]-->
                   </td>
                 </tr>
               </table>
