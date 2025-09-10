@@ -1,7 +1,0 @@
-{
-  "css.lint.unknownProperties": "ignore",
-  "scss.lint.unknownProperties": "ignore",
-  "css.customData": [
-    "./css-custom-data.json"
-  ]
-}
