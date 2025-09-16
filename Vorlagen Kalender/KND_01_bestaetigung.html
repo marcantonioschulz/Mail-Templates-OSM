@@ -36,12 +36,25 @@
                 <li><strong>Datum &amp; Uhrzeit:</strong> {{appointment.start_time}}</li>
                 <li><strong>Ort / Kontaktart:</strong> {{appointment.meeting_location}}</li>
               </ul>
-              <p style="margin:0 0 16px 0;">Sie erhalten vor dem Termin automatisch eine Erinnerung.</p>
+
+              <!-- Dezent wie in EVA -->
+              <p style="margin:6px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.4;color:#666;">
+                Falls sich bei Ihnen doch etwas ändert:
+                <a href="{{appointment.reschedule_link}}" style="color:#666;text-decoration:underline;">Termin anpassen</a>
+                oder
+                <a href="{{appointment.cancellation_link}}" style="color:#666;text-decoration:underline;">absagen</a>.
+              </p>
+
+              <!-- Entfernt: prominenter Block -->
+              <!--
               <p style="margin:0 0 12px 0;">Falls Sie den Termin verschieben oder absagen möchten, nutzen Sie einfach die folgenden Links:</p>
               <ul style="padding-left:18px;margin:0 0 20px 0;">
                 <li><strong>Umplanen:</strong> {{reschedule_link}}</li>
                 <li><strong>Stornieren:</strong> {{cancellation_link}}</li>
               </ul>
+              -->
+
+              <p style="margin:0 0 16px 0;">Sie erhalten vor dem Termin automatisch eine Erinnerung.</p>
               <p style="margin:0 0 16px 0;">Bei Fragen sind wir jederzeit gerne für Sie da.</p>
               <p style="margin:0 0 4px 0;">Viele Grüße<br>{{appointment.user.name}}<br>und Ihr Team von <strong>Endlich zu Hause</strong></p>
             </td>

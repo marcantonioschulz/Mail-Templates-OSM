@@ -32,11 +32,23 @@
                 <li><strong>Neuer Termin:</strong> {{appointment.start_time}}</li>
                 <li><strong>Ort / Kontaktart:</strong> {{appointment.meeting_location}}</li>
               </ul>
+
+              <!-- Dezent wie in EVA -->
+              <p style="margin:6px 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.4;color:#666;">
+                Falls sich bei Ihnen doch etwas ändert:
+                <a href="{{appointment.reschedule_link}}" style="color:#666;text-decoration:underline;">Termin anpassen</a>
+                oder
+                <a href="{{appointment.cancellation_link}}" style="color:#666;text-decoration:underline;">absagen</a>.
+              </p>
+
+              <!-- Entfernt: prominenter Anpassungsblock -->
+              <!--
               <p style="margin:0 0 12px 0;">Bei Bedarf können Sie erneut anpassen:</p>
               <ul style="padding-left:18px;margin:0 0 20px 0;">
                 <li><strong>Erneut verschieben:</strong> {{reschedule_link}}</li>
                 <li><strong>Absagen:</strong> {{cancellation_link}}</li>
               </ul>
+              -->
               <p style="margin:0 0 16px 0;">Bei Fragen melden Sie sich gern jederzeit.</p>
               <p style="margin:0 0 4px 0;">Viele Grüße<br>{{appointment.user.name}}<br>und Ihr Team von <strong>Endlich zu Hause</strong></p>
             </td>
