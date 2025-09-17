@@ -1,0 +1,17 @@
+{
+  "version": 1.1,
+  "properties": [
+    { "name": "mso-hide", "status": "nonstandard", "description": "Outlook: hide element (e.g. preheader)." },
+    { "name": "mso-line-height-rule", "status": "nonstandard", "description": "Outlook: line-height render rule (e.g. exactly)." },
+    { "name": "mso-padding-alt", "status": "nonstandard", "description": "Outlook: alt padding for VML buttons." },
+    { "name": "mso-text-raise", "status": "nonstandard", "description": "Outlook: lift text vertically." },
+    { "name": "mso-table-lspace", "status": "nonstandard", "description": "Outlook: left space for tables." },
+    { "name": "mso-table-rspace", "status": "nonstandard", "description": "Outlook: right space for tables." },
+    { "name": "mso-border-alt", "status": "nonstandard", "description": "Outlook: border alternative for VML." },
+    { "name": "mso-border-top-alt", "status": "nonstandard" },
+    { "name": "mso-border-right-alt", "status": "nonstandard" },
+    { "name": "mso-border-bottom-alt", "status": "nonstandard" },
+    { "name": "mso-border-left-alt", "status": "nonstandard" },
+    { "name": "mso-ansi-language", "status": "nonstandard" }
+  ]
+}
