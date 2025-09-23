@@ -3,9 +3,11 @@
 Diese Datei listet alle relevanten Merge Fields für die OSM Mail-Templates auf, inklusive GoHighLevel-Standardfelder und projektbezogener Custom Fields. Felder werden ohne Leerzeichen in den Klammern dargestellt.
 
 ## Was sind Merge Fields?
+
 Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webseiten, Workflows und Dokumenten. Sie werden automatisch mit den jeweiligen Daten aus dem CRM, Kalender, Kampagnen, Rechnungen usw. ersetzt.
 
 ## Hinweise zur Nutzung
+
 - Felder immer ohne Leerzeichen in den Klammern verwenden: z.B. `{{contact.first_name}}`
 - Für internationale Telefonnummern nutze die Raw-Formate (z.B. `{{contact.phone_raw}}`).
 - Für Fallback-Werte nutze GoHighLevel-Workflows (siehe unten).
@@ -13,6 +15,7 @@ Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webs
 ## Standard GoHighLevel Merge Fields
 
 ### CONTACT
+
 - `{{contact.name}}` – Vollständiger Name
 - `{{contact.first_name}}` – Vorname
 - `{{contact.last_name}}` – Nachname
@@ -34,6 +37,7 @@ Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webs
 - Latest Attribution: `{{contact.lastAttributionSource.sessionSource}}`, ...
 
 ### USER
+
 - `{{user.name}}` – Name des Benutzers
 - `{{user.first_name}}` – Vorname
 - `{{user.last_name}}` – Nachname
@@ -46,6 +50,7 @@ Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webs
 - `{{user.twilio_phone_number_raw}}` – Twilio Nummer (roh)
 
 ### APPOINTMENT
+
 - `{{appointment.title}}` – Termin-Titel
 - `{{appointment.start_time}}` – Startzeit
 - `{{appointment.only_start_date}}` – Nur Datum
@@ -62,18 +67,22 @@ Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webs
 - Assigned user: `{{appointment.user.name}}`, `{{appointment.user.email}}`, ...
 
 ### CALENDAR
+
 - `{{calendar.name}}` – Kalendername
 
 ### CAMPAIGN
+
 - `{{campaign.event_date_time}}` – Event, Datum, Uhrzeit
 - `{{campaign.event_date}}` – Event Datum
 - `{{campaign.event_time}}` – Event Uhrzeit
 
 ### MESSAGE
+
 - `{{message.body}}` – Nachrichteninhalt
 - `{{message.subject}}` – Betreff
 
 ### ACCOUNT/LOCATION
+
 - `{{location.name}}` – Standortname
 - `{{location.full_address}}` – Vollständige Adresse
 - `{{location.address}}` – Adresse
@@ -90,14 +99,17 @@ Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webs
 - `{{location.id}}` – Standort-ID
 
 ### RIGHT NOW
+
 - `{{right_now.second}}`, `{{right_now.minute}}`, `{{right_now.hour}}`, ...
 - `{{right_now.day_of_week}}`, `{{right_now.month_name}}`, `{{right_now.year}}`, ...
 
 ### ATTRIBUTION
+
 - Attribution: `{{contact.attributionSource.sessionSource}}`, ...
 - Latest Attribution: `{{contact.lastAttributionSource.sessionSource}}`, ...
 
 ### INVOICE
+
 - `{{invoice.name}}`, `{{invoice.number}}`, `{{invoice.issue_date}}`, ...
 - Company: `{{invoice.company.name}}`, ...
 - Customer: `{{invoice.customer.name}}`, ...
@@ -107,6 +119,7 @@ Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webs
 ## Custom Fields (Projektbezogen)
 
 ### Formular Felder
+
 - `{{contact.kaufpreis}}` – Kaufpreis
 - `{{contact.haushaltsnetto_in_zahlen}}` – Haushaltsnetto in Zahlen
 - `{{contact.eigenkapital}}` – Eigenkapital
@@ -121,12 +134,14 @@ Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webs
 - `{{contact.was_ist_aktuell_das_grte_hindernis_auf_dem_weg_ins_eigenheim}}` – Aktuelles Hindernis
 
 ### EZH Webseite Erstgespräch
+
 - `{{contact.wofr_interessiert_sie_sich}}` – Interessensgebiet
 - `{{contact.wo_stehen_sie_aktuell}}` – Aktuelle Situation
 - `{{contact.was_bremst_sie}}` – Bremse
 - `{{contact.wann_starten_sie}}` – Startzeitpunkt
 
 ### Vertriebler
+
 - `{{contact.was_ist_dein_aktueller_berufsstatus}}` – Berufsstatus
 - `{{contact.was_wre_dir_in_einer_neuen_stelle_am_wichtigsten}}` – Wichtigstes in neuer Stelle
 - `{{contact.welches_adjektiv_beschreibt_dich_am_besten}}` – Adjektiv
@@ -135,6 +150,7 @@ Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webs
 - `{{contact.warum_sollten_wir_gerade_dir_die_chance_geben_bei_uns_karriere_zu_machen}}` – Warum du?
 
 ### EZH Webseite Karriere
+
 - `{{contact.beruflicher_status}}` – Beruflicher Status
 - `{{contact.womit_kennst_du_dich_schon_aus}}` – Kenntnisse
 - `{{contact.was_motiviert_dich_am_meisten}}` – Motivation
@@ -143,22 +159,26 @@ Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webs
 - `{{contact.warum_sollten_wir_dich_kennenlernen}}` – Warum kennenlernen?
 
 ## Beispiel-Usage
+
 ```html
 <p>Hallo {{contact.first_name}}, Ihr Termin ist am {{appointment.start_time}}.</p>
 <a href="{{appointment.cancellation_link}}">Termin absagen</a>
 ```
 
 ## Fallback-Werte mit Workflows
+
 Wenn ein Feld leer ist, kann per Workflow ein Fallback-Wert gesetzt werden:
+
 1. Custom Value in den Einstellungen anlegen (z.B. First_Name_Fallback)
 2. Im Workflow If/Else-Bedingung für das Feld prüfen
 3. Fallback-Wert im Template nutzen, falls das Feld leer ist
 
-Mehr Infos: https://help.gohighlevel.com/support/solutions/articles/48001180266
+Mehr Infos: <https://help.gohighlevel.com/support/solutions/articles/48001180266>
 
 ## Links & Referenzen
-- GoHighLevel Merge Fields: https://help.gohighlevel.com/support/solutions/articles/48001078171-list-of-merge-fields
-- Kontakt-Detail-Link: https://app.osm.marketing/v2/location/{{location.id}}/contacts/detail/{{contact.id}}
+
+- GoHighLevel Merge Fields: <https://help.gohighlevel.com/support/solutions/articles/48001078171-list-of-merge-fields>
+- Kontakt-Detail-Link: <https://app.osm.marketing/v2/location/{{location.id}}/contacts/detail/{{contact.id}}>
 
 ---
 Diese Datei ist die zentrale Referenz für alle Merge Fields im Projekt. Ergänze neue Custom Fields hier und nutze die Felder konsistent in allen Templates.
