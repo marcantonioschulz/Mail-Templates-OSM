@@ -25,7 +25,7 @@ The repository is organized by template type and usage context. It contains only
 
 This project uses GoHighLevel merge fields to personalize templates.
 
-- The central reference for all available fields is the `.github/merge-fields.md` file.
+- The central reference for all available fields is the `.github/instructions/merge-fields.md` file.
 - Fields are written without spaces inside the curly braces (e.g., `{{contact.first_name}}`).
 
 ### Example
@@ -49,11 +49,14 @@ All PDFs are saved in the `PDF/` directory, using the original template filename
 ### Setup (one-time)
 
 1. **Create and activate a Python virtual environment** (recommended):
+
    ```sh
    python3 -m venv venv_pdf
    source venv_pdf/bin/activate
    ```
+
 2. **Install dependencies**:
+
    ```sh
    pip install playwright
    python -m playwright install chromium
@@ -62,18 +65,22 @@ All PDFs are saved in the `PDF/` directory, using the original template filename
 ### Usage
 
 1. **Run the conversion script**:
+
    ```sh
    python html2pdf.py
    ```
+
    - All HTML templates in the main folders will be converted automatically.
    - PDFs are saved in `PDF/` with matching filenames.
 
 ### Troubleshooting
 
 - If you see errors about missing Chromium, rerun:
+
   ```sh
   python -m playwright install chromium
   ```
+
 - For best results, ensure all HTML templates use inline styles and are designed for email clients.
 - If layout issues persist, adjust the HTML or CSS and rerun the script.
 
