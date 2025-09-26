@@ -5,11 +5,11 @@
   <title>[Recruiting] Neue Bewerbung</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Mergefields:
-       {{ contact.first_name }}, {{ contact.last_name }}, {{ contact.email }}, {{ contact.phone_raw }},
-       {{ contact.beruflicher_status }}, {{ contact.womit_kennst_du_dich_schon_aus }},
-       {{ contact.was_motiviert_dich_am_meisten }}, {{ contact.hast_du_erfahrung_in }},
-       {{ contact.was_traust_du_dir_aktuell_zu }}, {{ contact.warum_sollten_wir_dich_kennenlernen }},
-       {{ location.id }}, {{ contact.id }} -->
+       {{contact.first_name}}, {{contact.last_name}}, {{contact.email}}, {{contact.phone_raw}},
+       {{contact.beruflicher_status}}, {{contact.womit_kennst_du_dich_schon_aus}},
+       {{contact.was_motiviert_dich_am_meisten}}, {{contact.hast_du_erfahrung_in}},
+       {{contact.was_traust_du_dir_aktuell_zu}}, {{contact.warum_sollten_wir_dich_kennenlernen}},
+       {{location.id}}, {{contact.id}} -->
   <meta name="x-apple-disable-message-reformatting">
   <meta name="format-detection" content="telephone=no,email=no,address=no">
   <meta name="color-scheme" content="light only">
@@ -36,64 +36,88 @@
           <!-- Basics -->
           <tr>
             <td style="padding:18px 18px 8px 18px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;color:#333;" role="article" aria-label="Neue Bewerbung">
-              <p style="margin:0 0 8px 0;"><strong>Name:</strong> {{ contact.first_name }} {{ contact.last_name }}</p>
+              <p style="margin:0 0 8px 0;"><strong>Name:</strong> {{contact.first_name}} {{contact.last_name}}</p>
               <p style="margin:0 0 8px 0;"><strong>E-Mail:</strong>
-                <a href="mailto:{{ contact.email }}" style="color:#0b5cab;text-decoration:none;">{{ contact.email }}</a>
+                <a href="mailto:{{contact.email}}" style="color:#0b5cab;text-decoration:none;">{{contact.email}}</a>
               </p>
               <p style="margin:0 0 12px 0;"><strong>Telefon:</strong>
-                <a href="tel:{{ contact.phone_raw }}" style="color:#0b5cab;text-decoration:none;">{{ contact.phone_raw }}</a>
+                <a href="tel:{{contact.phone_raw}}" style="color:#0b5cab;text-decoration:none;">{{contact.phone_raw}}</a>
               </p>
 
               <!-- Formularfelder -->
               <p style="margin:12px 0 6px 0;"><strong>Beruflicher Status</strong><br>
-                <span style="white-space:pre-wrap;">{{ contact.beruflicher_status }}</span></p>
+                <span style="white-space:pre-wrap;">{{contact.beruflicher_status}}</span></p>
 
               <p style="margin:0 0 6px 0;"><strong>Womit kennst du dich (schon) aus?</strong><br>
-                <span style="white-space:pre-wrap;">{{ contact.womit_kennst_du_dich_schon_aus }}</span></p>
+                <span style="white-space:pre-wrap;">{{contact.womit_kennst_du_dich_schon_aus}}</span></p>
 
               <p style="margin:0 0 6px 0;"><strong>Hast du Erfahrung in...?</strong><br>
-                <span style="white-space:pre-wrap;">{{ contact.hast_du_erfahrung_in }}</span></p>
+                <span style="white-space:pre-wrap;">{{contact.hast_du_erfahrung_in}}</span></p>
 
               <p style="margin:0 0 6px 0;"><strong>Was motiviert dich am meisten?</strong><br>
-                <span style="white-space:pre-wrap;">{{ contact.was_motiviert_dich_am_meisten }}</span></p>
+                <span style="white-space:pre-wrap;">{{contact.was_motiviert_dich_am_meisten}}</span></p>
 
               <p style="margin:0 0 6px 0;"><strong>Was traust du dir aktuell zu?</strong><br>
-                <span style="white-space:pre-wrap;">{{ contact.was_traust_du_dir_aktuell_zu }}</span></p>
+                <span style="white-space:pre-wrap;">{{contact.was_traust_du_dir_aktuell_zu}}</span></p>
 
               <p style="margin:0 0 10px 0;"><strong>Warum sollten wir dich kennenlernen?</strong><br>
-                <span style="white-space:pre-wrap;">{{ contact.warum_sollten_wir_dich_kennenlernen }}</span>
+                <span style="white-space:pre-wrap;">{{contact.warum_sollten_wir_dich_kennenlernen}}</span>
               </p>
 
               <!-- CTAs -->
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:10px 0 0 0;">
                 <tr>
                   <!-- CRM öffnen -->
-                  <td align="left" bgcolor="#ba0c2f" style="border-radius:4px;">
-                    <a href="https://app.osm.marketing/v2/location/{{ location.id }}/contacts/detail/{{ contact.id }}"
+                  <td align="left">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://desk.selly-ki.de/v2/location/{{location.id}}/contacts/detail/{{contact.id}}" style="height:40px;v-text-anchor:middle;width:150px;" arcsize="10%" stroke="f" fillcolor="#ba0c2f">
+                      <w:anchorlock/>
+                      <center style="color:#ffffff;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;">Im CRM öffnen</center>
+                    </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-- -->
+                    <a href="https://desk.selly-ki.de/v2/location/{{location.id}}/contacts/detail/{{contact.id}}"
                        style="display:inline-block;background:#ba0c2f;color:#ffffff;text-decoration:none;padding:10px 16px;border-radius:4px;font-weight:bold;font-family:Arial,Helvetica,sans-serif;">
                       Im CRM öffnen
                     </a>
+                    <!--<![endif]-->
                   </td>
 
                   <td width="8"></td>
 
                   <!-- Anrufen -->
-                  <td align="left" bgcolor="#ededed" style="border-radius:4px;">
-                    <a href="tel:{{ contact.phone_raw }}"
+                  <td align="left">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="tel:{{contact.phone_raw}}" style="height:40px;v-text-anchor:middle;width:120px;" arcsize="10%" stroke="f" fillcolor="#ededed">
+                      <w:anchorlock/>
+                      <center style="color:#222222;font-family:Arial,sans-serif;font-size:14px;">Anrufen</center>
+                    </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-- -->
+                    <a href="tel:{{contact.phone_raw}}"
                        style="display:inline-block;background:#ededed;color:#222222;text-decoration:none;padding:10px 16px;border-radius:4px;font-family:Arial,Helvetica,sans-serif;">
                       Anrufen
                     </a>
+                    <!--<![endif]-->
                   </td>
 
                   <td width="8"></td>
 
                   <!-- E-Mail senden -->
-                  <td align="left" bgcolor="#ededed" style="border-radius:4px;">
-                    <a href="mailto:{{ contact.email }}?subject=%5BRecruiting%5D%20Bewerbung%20{{ contact.first_name }}%20{{ contact.last_name }}"
+                  <td align="left">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="mailto:{{contact.email}}?subject=%5BRecruiting%5D%20Bewerbung%20{{contact.first_name}}%20{{contact.last_name}}" style="height:40px;v-text-anchor:middle;width:150px;" arcsize="10%" stroke="f" fillcolor="#ededed">
+                      <w:anchorlock/>
+                      <center style="color:#222222;font-family:Arial,sans-serif;font-size:14px;">E-Mail senden</center>
+                    </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-- -->
+                    <a href="mailto:{{contact.email}}?subject=%5BRecruiting%5D%20Bewerbung%20{{contact.first_name}}%20{{contact.last_name}}"
                        style="display:inline-block;background:#ededed;color:#222222;text-decoration:none;padding:10px 16px;border-radius:4px;font-family:Arial,Helvetica,sans-serif;"
-                       aria-label="Antwort per E-Mail an {{ contact.first_name }} {{ contact.last_name }}">
+                       aria-label="Antwort per E-Mail an {{contact.first_name}} {{contact.last_name}}">
                       E-Mail senden
                     </a>
+                    <!--<![endif]-->
                   </td>
                 </tr>
               </table>

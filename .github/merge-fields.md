@@ -178,7 +178,7 @@ Mehr Infos: <https://help.gohighlevel.com/support/solutions/articles/48001180266
 ## Links & Referenzen
 
 - GoHighLevel Merge Fields: <https://help.gohighlevel.com/support/solutions/articles/48001078171-list-of-merge-fields>
-- Kontakt-Detail-Link: <https://app.osm.marketing/v2/location/{{location.id}}/contacts/detail/{{contact.id}}>
+- Kontakt-Detail-Link: <https://desk.selly-ki.de/v2/location/{{location.id}}/contacts/detail/{{contact.id}}>
 
 ---
 Diese Datei ist die zentrale Referenz für alle Merge Fields im Projekt. Ergänze neue Custom Fields hier und nutze die Felder konsistent in allen Templates.
