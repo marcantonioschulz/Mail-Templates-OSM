@@ -40,3 +40,41 @@ This project uses GoHighLevel merge fields to personalize templates.
 1. **Edit**: Directly edit the HTML files for content or layout changes.
 2. **Preview**: Open the HTML files in a browser or use an email testing tool to validate the appearance.
 3. **Commit**: There are no automated build or deployment scripts. Manual validation is required before committing changes.
+
+## PDF Export & Printing
+
+The workflow now uses Playwright (Chromium) for pixel-perfect PDF rendering matching the email look.
+All PDFs are saved in the `PDF/` directory, using the original template filenames. The `PDF/` folder is ignored by git and can be used for printing or sharing.
+
+### Setup (one-time)
+
+1. **Create and activate a Python virtual environment** (recommended):
+   ```sh
+   python3 -m venv venv_pdf
+   source venv_pdf/bin/activate
+   ```
+2. **Install dependencies**:
+   ```sh
+   pip install playwright
+   python -m playwright install chromium
+   ```
+
+### Usage
+
+1. **Run the conversion script**:
+   ```sh
+   python html2pdf.py
+   ```
+   - All HTML templates in the main folders will be converted automatically.
+   - PDFs are saved in `PDF/` with matching filenames.
+
+### Troubleshooting
+
+- If you see errors about missing Chromium, rerun:
+  ```sh
+  python -m playwright install chromium
+  ```
+- For best results, ensure all HTML templates use inline styles and are designed for email clients.
+- If layout issues persist, adjust the HTML or CSS and rerun the script.
+
+**Note:** The script deletes old PDFs before each run to avoid stale files.
