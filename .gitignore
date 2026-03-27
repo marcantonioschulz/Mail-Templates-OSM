@@ -8,7 +8,8 @@ Desktop.ini
 ehthumbs.db
 
 # VS Code Workspace & Settings
-.vscode/
+.vscode/*
+!.vscode/mcp.json
 *.code-workspace
 css-custom-data.json
 settings.json
@@ -20,3 +21,8 @@ PDF/
 *~
 *.swp
 *.log
+
+# Lokale Secrets/Umgebungsvariablen
+.env
+.env.*
+!.env.example

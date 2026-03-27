@@ -7,6 +7,8 @@ applyTo: '**'
 All AI agents and LLMs must:
 - Use only merge fields listed in `.github/instructions/merge-fields.md` for personalization and template logic.
 - Follow all naming, structure, and workflow conventions described in `.github/instructions/copilot-instructions.md`.
+- Follow the CRM sync workflow in `.github/instructions/copilot-instructions.md`: template changes should be synced to GHL via MCP by default unless explicitly requested as local-only.
+- Follow the naming mapping in `.github/instructions/copilot-instructions.md` so local filenames and CRM template names stay deterministic.
 - Check both files for updates before generating or editing code/templates.
 - If unsure about a field or pattern, ask for clarification or reference existing templates.
 

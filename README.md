@@ -14,6 +14,7 @@ Willkommen! Dieses Repository enthält alle E-Mail-Vorlagen für "Endlich zu Hau
 6. [Häufige Probleme & Lösungen](#-häufige-probleme--lösungen)
 7. [Ordnerstruktur im Überblick](#-ordnerstruktur-im-überblick)
 8. [PDF-Export (für Fortgeschrittene)](#-pdf-export-für-fortgeschrittene)
+9. [HighLevel MCP Setup (direkt aus VS Code ins CRM)](#-highlevel-mcp-setup-direkt-aus-vs-code-ins-crm)
 
 ---
 
@@ -445,6 +446,78 @@ python html2pdf.py
 Alle PDFs werden im Ordner `PDF/` gespeichert.
 
 **Hinweis:** Der `PDF/`-Ordner wird **nicht in Git gespeichert** (steht in `.gitignore`). PDFs sind nur lokal verfügbar.
+
+---
+
+## 🔌 HighLevel MCP Setup (direkt aus VS Code ins CRM)
+
+Mit dem HighLevel MCP Server kannst du CRM-Daten und Tools direkt aus einem AI-Client ansprechen, ohne den HTML-Code jedes Mal manuell in GHL zu kopieren.
+
+### Was wurde in diesem Repository vorbereitet?
+
+- `.vscode/mcp.json` mit dem offiziellen MCP-Endpunkt
+- `.env.example` als sichere Vorlage für URL, Token und Location-ID
+- `.gitignore`-Schutz, damit `.env` nicht versehentlich committed wird
+
+### 1) Lokale `.env` anlegen
+
+Erstelle lokal eine Datei `.env` im Projektordner und trage deine echten Werte ein:
+
+```dotenv
+GHL_MCP_URL=https://services.leadconnectorhq.com/mcp/
+GHL_PIT_TOKEN=DEIN_PIT_TOKEN
+GHL_LOCATION_ID=DEINE_LOCATION_ID
+```
+
+Wichtig:
+- `.env` bleibt lokal und ist per `.gitignore` ausgeschlossen.
+- Nur `.env.example` wird versioniert.
+
+### 2) PIT (Private Integration Token) in HighLevel erstellen
+
+Pfad in GHL:
+- `Settings` → `Private Integrations` → `Create New Integration`
+
+Empfohlene Mindest-Scopes für Template-Arbeit:
+- `View Email Templates`
+- `Create, Update and Delete Email Templates`
+- `View Locations`
+
+Optional (nur wenn wirklich gebraucht):
+- Kontakte, Konversationen, Kalender, Opportunities etc.
+
+### 3) MCP-Verbindung testen
+
+1. VS Code neu laden.
+2. Einen ersten Read-Only-Test ausführen (z. B. E-Mail-Templates abrufen).
+3. Danach kontrollierten Schreibtest mit Testvorlage machen (z. B. neue Testvorlage erstellen oder bestehende Testvorlage aktualisieren).
+4. Ergebnis in HighLevel gegenprüfen.
+
+### 4) Sicherheitsregeln
+
+- Verwende immer die kleinsten nötigen Scopes.
+- Teile PIT-Tokens nie in Chat, Commit oder Screenshot.
+- Bei Verdacht auf Leak: Token sofort rotieren und altes Token löschen.
+
+### MCP-Konfigurationsbeispiel (bereits hinterlegt)
+
+```json
+{
+    "mcpServers": {
+        "prod-ghl-mcp": {
+            "url": "${env:GHL_MCP_URL}",
+            "headers": {
+                "Authorization": "Bearer ${env:GHL_PIT_TOKEN}",
+                "locationId": "${env:GHL_LOCATION_ID}"
+            }
+        }
+    }
+}
+```
+
+Hinweis:
+- Der Endpunkt basiert auf der offiziellen HighLevel-Doku: `https://services.leadconnectorhq.com/mcp/`.
+- Für die Template-Inhalte gelten weiterhin die Merge-Field-Regeln aus `.github/instructions/merge-fields.md`.
 
 ---
 
