@@ -9,8 +9,17 @@
 <body style="margin:0;padding:0;background-color:#f5f5f5;">
   <!-- Preheader (hidden) -->
   <div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
-    Eine Frage, die einfach klingt - und es nicht ist. Genau darum geht es am {{appointment.only_start_date}}.
+    Eine Frage, die einfach klingt – und es nicht ist.
   </div>
+
+  <!-- View in browser -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f5f5f5;" bgcolor="#f5f5f5">
+    <tr>
+      <td align="center" style="padding:10px 12px 0 12px;font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:1.4;color:#777777;">
+        Probleme bei der Darstellung? <a href="{{email.view_in_browser_url}}" style="color:#555555;text-decoration:underline;">E-Mail im Browser öffnen</a>
+      </td>
+    </tr>
+  </table>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;">
     <tr>
@@ -31,49 +40,42 @@
           <tr>
             <td style="padding:28px 28px 8px 28px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#333;">
 
-              <p style="margin:0 0 16px 0;">Guten Tag {{contact.first_name}},</p>
+              <p style="margin:0 0 16px 0;">Guten Tag {{contact.first_name}} {{contact.last_name}},</p>
 
-              <p style="margin:0 0 16px 0;">in vielen Gesprächen rund um das Thema Immobilien taucht eine Frage immer wieder auf:</p>
+              <p style="margin:0 0 16px 0;">in Gesprächen rund um Immobilien taucht eine Frage immer wieder auf:</p>
 
-              <p style="margin:0 0 16px 0;font-style:italic;color:#555;">„Wo fängt man bei dieser Entscheidung eigentlich richtig an?"</p>
+              <p style="margin:0 0 16px 0;"><strong>„Wo fängt man bei dieser Entscheidung eigentlich richtig an?"</strong></p>
 
-              <p style="margin:0 0 16px 0;">Viele Menschen beschäftigen sich zunächst mit einzelnen Angeboten, Objekten oder Finanzierungsbeispielen. Dabei entsteht schnell das Gefühl, sehr viele Informationen gleichzeitig bewerten zu müssen.</p>
+              <p style="margin:0 0 16px 0;">Viele beginnen mit Objekten, Angeboten oder Finanzierungsbeispielen – und merken schnell, wie viele Informationen auf einmal bewertet werden müssen.</p>
 
-              <p style="margin:0 0 16px 0;">Genau deshalb empfinden viele die Entscheidung rund um Immobilien als deutlich komplizierter, als sie mit der richtigen Struktur sein könnte.</p>
-
-              <p style="margin:0 0 8px 0;font-weight:bold;">Eine kurze Frage, über die Sie sich schon jetzt Gedanken machen dürfen:</p>
-
-              <p style="margin:0 0 16px 0;font-style:italic;color:#555;">Wie viel Eigenkapital würden Sie für eine Kapitalanlage-Immobilie einsetzen - und warum?</p>
-
-              <p style="margin:0 0 16px 0;">Diese Frage klingt einfach. Sie ist es aber nicht.</p>
-
-              <p style="margin:0 0 16px 0;">Und genau darum geht es am {{appointment.only_start_date}}: Warum die Antwort auf diese eine Frage über alles Weitere entscheidet - und warum die meisten Menschen hier mit einer Zahl antworten, die sie später ändern würden.</p>
-
-              <p style="margin:0 0 8px 0;">Im Webinar schauen wir uns unter anderem an:</p>
-              <ul style="list-style:none;padding-left:0;margin:0 0 20px 0;">
-                <li style="padding:3px 0;">– welche Rolle Immobilien grundsätzlich in einer langfristigen Altersvorsorge spielen können,</li>
-                <li style="padding:3px 0;">– warum viele Entscheidungen unnötig kompliziert werden,</li>
-                <li style="padding:3px 0;">– und welche Fragen vor der Betrachtung einzelner Objekte hilfreich zu klären sind.</li>
-              </ul>
-
-              <p style="margin:0 0 20px 0;">Ziel des Webinars ist keine schnelle Entscheidung, sondern eine klare Einordnung, damit Sie Ihre eigene Situation fundiert beurteilen können.</p>
-
-              <!-- Termin -->
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
-                     style="background:#f9f9f9;border:1px solid #e0e0e0;margin:0 0 20px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#d8e8f5;border:1px solid #2e5f8a;margin:0 0 16px 0;">
                 <tr>
-                  <td style="padding:16px 20px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#333;">
-                    <strong>Termin des Live-Webinars</strong><br>
-                    {{appointment.only_start_date}} · {{appointment.only_start_time}} Uhr
+                  <td style="padding:14px 16px;">
+                    <strong>Eine Frage zum Nachdenken:</strong> <em>Wie viel Eigenkapital würden Sie für eine Kapitalanlage-Immobilie einsetzen – und warum?</em><br>
+                    Diese Frage klingt einfach. Sie ist es nicht. Genau darum geht es am {{appointment.only_start_date}}.
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:0 0 8px 0;"><strong>Im Webinar schauen wir uns unter anderem an:</strong></p>
+              <p style="margin:0 0 4px 0;"><em>– welche Rolle Immobilien in einer langfristigen Altersvorsorge spielen können,</em></p>
+              <p style="margin:0 0 4px 0;"><em>– warum viele Entscheidungen unnötig kompliziert werden,</em></p>
+              <p style="margin:0 0 16px 0;"><em>– und welche Fragen vor der Betrachtung einzelner Objekte zu klären sind.</em></p>
+
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f5e6c8;border:1px solid #c8a96e;margin:0 0 16px 0;">
+                <tr>
+                  <td style="padding:14px 16px;color:#1a3a5c;">
+                    <strong>Ihr Webinar-Termin</strong><br>
+                    {{appointment.only_start_date}} · {{appointment.only_start_time}}
                   </td>
                 </tr>
               </table>
 
               <p style="margin:0 0 16px 0;">&#8594; Am meisten profitieren Sie, wenn Sie von Beginn an dabei sind.</p>
 
-              <p style="margin:0 0 16px 0;">Den Zugangslink und eine weitere Erinnerung erhalten Sie rechtzeitig vor dem Start.</p>
-
-              <p style="margin:0 0 4px 0;">Herzliche Grüße<br>Sabine und Thomas Schulz<br><strong>Endlich zu Hause Immobilien</strong></p>
+              <p style="margin:0 0 4px 0;">Herzliche Grüße</p>
+              <p style="margin:0 0 4px 0;"><strong>Sabine und Thomas Schulz</strong></p>
+              <p style="margin:0;"><strong>Endlich zu Hause Immobilien</strong></p>
             </td>
           </tr>
           <!-- Footer -->

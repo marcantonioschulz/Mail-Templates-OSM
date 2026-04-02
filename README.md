@@ -113,7 +113,7 @@ Wenn du die Datei öffnest, siehst du den HTML-Code mit Syntax-Hervorhebung. Das
 
 Du schreibst in der Vorlage:
 ```
-Hallo {{contact.first_name}}, Ihr Termin ist am {{appointment.start_time}}.
+Hallo {{contact.first_name}} {{contact.last_name}}, Ihr Termin ist am {{appointment.start_time}}.
 ```
 
 Der Kunde sieht:
@@ -215,7 +215,7 @@ Schauen wir uns die Datei `Vorlagen Kalender/KND_01_bestaetigung.html` an:
 **Wichtigste Elemente:**
 
 ```html
-<p>Hallo {{contact.first_name}},</p>
+<p>Hallo {{contact.first_name}} {{contact.last_name}},</p>
 ```
 → Personalisierte Anrede
 

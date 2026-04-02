@@ -19,7 +19,7 @@ Betreff: Erinnerung: Ihr Termin morgen – Endlich zu Hause
 
 ---
 
-Hallo {{contact.first_name}},
+Hallo {{contact.first_name}} {{contact.last_name}},
 
 wir freuen uns auf Ihr Gespräch morgen!
 

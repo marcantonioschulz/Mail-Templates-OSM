@@ -108,7 +108,7 @@ Merge Fields ermöglichen die dynamische Personalisierung von E-Mails, SMS, Webs
 ## Beispiel-Usage
 
 ```html
-<p>Hallo {{contact.first_name}}, Ihr Termin ist am {{appointment.start_time}}.</p>
+<p>Hallo {{contact.first_name}} {{contact.last_name}}, Ihr Termin ist am {{appointment.start_time}}.</p>
 <a href="{{appointment.cancellation_link}}">Termin absagen</a>
 ```
 

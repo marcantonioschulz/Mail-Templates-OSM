@@ -9,8 +9,17 @@
 <body style="margin:0;padding:0;background-color:#f5f5f5;">
   <!-- Preheader (hidden) -->
   <div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
-    Ein kurzer Blick auf den morgigen Abend - damit Sie wissen, was Sie erwartet.
+    Ein kurzer Blick auf den morgigen Abend.
   </div>
+
+  <!-- View in browser -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f5f5f5;" bgcolor="#f5f5f5">
+    <tr>
+      <td align="center" style="padding:10px 12px 0 12px;font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:1.4;color:#777777;">
+        Probleme bei der Darstellung? <a href="{{email.view_in_browser_url}}" style="color:#555555;text-decoration:underline;">E-Mail im Browser öffnen</a>
+      </td>
+    </tr>
+  </table>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;">
     <tr>
@@ -31,7 +40,7 @@
           <tr>
             <td style="padding:28px 28px 8px 28px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#333;">
 
-              <p style="margin:0 0 16px 0;">Guten Tag {{contact.first_name}},</p>
+              <p style="margin:0 0 16px 0;">Guten Tag {{contact.first_name}} {{contact.last_name}},</p>
 
               <p style="margin:0 0 16px 0;">morgen findet das Live-Webinar statt:</p>
 
@@ -42,53 +51,42 @@
                 mit Sabine und Thomas Schulz von Endlich zu Hause Immobilien
               </p>
 
-              <!-- Termin -->
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
-                     style="background:#f9f9f9;border:1px solid #e0e0e0;margin:0 0 20px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f5e6c8;border:1px solid #c8a96e;margin:0 0 16px 0;">
                 <tr>
-                  <td style="padding:16px 20px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#333;">
-                    <strong>Termin</strong><br>
-                    {{appointment.only_start_date}} · {{appointment.only_start_time}} Uhr
+                  <td style="padding:14px 16px;color:#1a3a5c;">
+                    <strong>Ihr Webinar-Termin</strong><br>
+                    Morgen · {{appointment.only_start_date}} · {{appointment.only_start_time}}
                   </td>
                 </tr>
               </table>
 
-              <p style="margin:0 0 16px 0;">Das Webinar ist bewusst so aufgebaut, dass Sie das Thema Immobilien ruhig und strukturiert einordnen können - entlang des Immobilienfahrplans, dem roten Faden, dem Sabine und Thomas Schulz in ihrer gesamten Begleitarbeit folgen.</p>
+              <p style="margin:0 0 16px 0;">Das Webinar ist bewusst so aufgebaut, dass Sie das Thema ruhig und strukturiert einordnen können.</p>
 
-              <p style="margin:0 0 16px 0;">Viele Menschen beschäftigen sich mit Immobilien, haben aber gleichzeitig das Gefühl, dass ihnen eine klare Entscheidungsgrundlage fehlt.</p>
+              <p style="margin:0 0 8px 0;">Morgen schauen wir darauf,</p>
+              <p style="margin:0 0 4px 0;"><em>– wie Immobilien als Baustein einer Altersvorsorge funktionieren können,</em></p>
+              <p style="margin:0 0 4px 0;"><em>– warum viele Entscheidungen unnötig kompliziert werden,</em></p>
+              <p style="margin:0 0 16px 0;"><em>– und welche Struktur hinter einer tragfähigen Entscheidung stehen sollte.</em></p>
 
-              <p style="margin:0 0 16px 0;">Im Webinar geht es deshalb nicht um einzelne Angebote oder schnelle Investments.</p>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#d8e8f5;border:1px solid #2e5f8a;margin:0 0 16px 0;">
+                <tr>
+                  <td style="padding:14px 16px;">
+                    Am Ende des Webinars haben Sie die Möglichkeit, einen <strong>kostenfreien persönlichen Termin</strong> zu vereinbaren – um den Immobilienfahrplan auf Ihre individuelle Situation anzuwenden. Kein Druck, keine Verpflichtung.
+                  </td>
+                </tr>
+              </table>
 
-              <p style="margin:0 0 8px 0;">Stattdessen schauen wir gemeinsam darauf,</p>
-              <ul style="list-style:none;padding-left:0;margin:0 0 20px 0;">
-                <li style="padding:3px 0;">– wie Immobilien grundsätzlich als Baustein einer Altersvorsorge funktionieren können,</li>
-                <li style="padding:3px 0;">– warum viele Entscheidungen unnötig kompliziert werden,</li>
-                <li style="padding:3px 0;">– und welche Struktur hinter einer tragfähigen Entscheidung stehen sollte.</li>
-              </ul>
+              <p style="margin:0 0 16px 0;">Kleiner Hinweis: Planen Sie etwa 90 Minuten ein. Den Zugangslink erhalten Sie rechtzeitig.</p>
 
-              <p style="margin:0 0 16px 0;">Damit Sie wissen, was Sie morgen erwartet:</p>
-
-              <p style="margin:0 0 16px 0;">Das Webinar endet mit einem konkreten nächsten Schritt. Wer nach dem Webinar den Immobilienfahrplan auf die eigene Situation anwenden möchte, hat die Möglichkeit, im Anschluss einen kostenfreien persönlichen Termin mit Sabine und Thomas Schulz zu vereinbaren.</p>
-
-              <p style="margin:0 0 16px 0;">Dort geht es nicht um allgemeine Informationen - sondern konkret um Ihre Zahlen, Ihre Situation, Ihre Fragen.</p>
-
-              <p style="margin:0 0 20px 0;">Kein Druck, keine Verpflichtung. Wer kommen möchte, bringt am besten die Überlegung mit, die wir Ihnen in der letzten E-Mail mitgegeben haben.</p>
-
-              <p style="margin:0 0 8px 0;font-weight:bold;">Kleiner Hinweis zur Teilnahme</p>
-              <p style="margin:0 0 20px 0;">Planen Sie sich für das Webinar etwa 90 Minuten ungestörte Zeit ein. Viele Teilnehmer empfinden es als hilfreich, sich währenddessen einige kurze Notizen zu machen.</p>
-
-              <p style="margin:0 0 8px 0;">&#8594; Tragen Sie sich den Termin gerne noch einmal in Ihren Kalender ein:</p>
+              <p style="margin:0 0 8px 0;">&#8594; Tragen Sie sich den Termin gerne noch einmal in Ihren Kalender ein.</p>
               <p style="margin:0 0 20px 0;font-size:14px;">
                 <a href="{{appointment.add_to_google_calendar}}" style="color:#0b5cab;text-decoration:underline;">Google Kalender</a>
                 &nbsp;|&nbsp;
                 <a href="{{appointment.add_to_ical_outlook}}" style="color:#0b5cab;text-decoration:underline;">iCal / Outlook</a>
               </p>
 
-              <p style="margin:0 0 16px 0;">Den Zugangslink zum Webinar erhalten Sie rechtzeitig vor dem Start noch einmal per E-Mail.</p>
-
-              <p style="margin:0 0 16px 0;">Wir freuen uns, Sie morgen live im Webinar zu begrüßen.</p>
-
-              <p style="margin:0 0 4px 0;">Herzliche Grüße<br>Sabine und Thomas Schulz<br><strong>Endlich zu Hause Immobilien</strong></p>
+              <p style="margin:0 0 4px 0;">Herzliche Grüße</p>
+              <p style="margin:0 0 4px 0;"><strong>Sabine und Thomas Schulz</strong></p>
+              <p style="margin:0;"><strong>Endlich zu Hause Immobilien</strong></p>
             </td>
           </tr>
           <!-- Footer -->

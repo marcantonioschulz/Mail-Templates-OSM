@@ -2,15 +2,24 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Heute um 11:00 Uhr – Ihr Zugangslink zum Live-Webinar</title>
+  <title>Heute – Ihr Zugangslink zum Live-Webinar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="x-apple-disable-message-reformatting">
 </head>
 <body style="margin:0;padding:0;background-color:#f5f5f5;">
   <!-- Preheader (hidden) -->
   <div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
-    Eine kurze Erinnerung für heute Vormittag.
+    Eine kurze Erinnerung für heute.
   </div>
+
+  <!-- View in browser -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f5f5f5;" bgcolor="#f5f5f5">
+    <tr>
+      <td align="center" style="padding:10px 12px 0 12px;font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:1.4;color:#777777;">
+        Probleme bei der Darstellung? <a href="{{email.view_in_browser_url}}" style="color:#555555;text-decoration:underline;">E-Mail im Browser öffnen</a>
+      </td>
+    </tr>
+  </table>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;">
     <tr>
@@ -31,7 +40,7 @@
           <tr>
             <td style="padding:28px 28px 8px 28px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#333;">
 
-              <p style="margin:0 0 16px 0;">Guten Tag {{contact.first_name}},</p>
+              <p style="margin:0 0 16px 0;">Guten Tag {{contact.first_name}} {{contact.last_name}},</p>
 
               <p style="margin:0 0 16px 0;">heute findet das Live-Webinar statt:</p>
 
@@ -42,41 +51,31 @@
                 mit Sabine und Thomas Schulz von Endlich zu Hause Immobilien
               </p>
 
-              <!-- Termin -->
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
-                     style="background:#f9f9f9;border:1px solid #e0e0e0;margin:0 0 20px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f5e6c8;border:1px solid #c8a96e;margin:0 0 16px 0;">
                 <tr>
-                  <td style="padding:16px 20px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#333;">
-                    <strong>Termin</strong><br>
-                    Heute · {{appointment.only_start_time}} Uhr
+                  <td style="padding:14px 16px;color:#1a3a5c;">
+                    <strong>Ihr Webinar-Termin</strong><br>
+                    Heute · {{appointment.only_start_time}}
                   </td>
                 </tr>
               </table>
 
-              <p style="margin:0 0 16px 0;">Viele Teilnehmer nutzen den Vormittag vor dem Webinar noch einmal, um sich kurz zu überlegen, welche Fragen sie persönlich rund um das Thema Immobilien beschäftigen.</p>
+              <p style="margin:0 0 8px 0;"><strong>Typische Fragen sind zum Beispiel:</strong></p>
+              <p style="margin:0 0 4px 0;"><em>– Passen Immobilien grundsätzlich zu meiner Situation?</em></p>
+              <p style="margin:0 0 4px 0;"><em>– Welche Risiken sollte ich realistisch berücksichtigen?</em></p>
+              <p style="margin:0 0 16px 0;"><em>– Woran erkennt man, ob eine Entscheidung langfristig tragfähig ist?</em></p>
 
-              <p style="margin:0 0 8px 0;">Typische Fragen sind zum Beispiel:</p>
-              <ul style="list-style:none;padding-left:0;margin:0 0 20px 0;">
-                <li style="padding:3px 0;">– Passen Immobilien grundsätzlich zu meiner Situation?</li>
-                <li style="padding:3px 0;">– Welche Risiken sollte ich realistisch berücksichtigen?</li>
-                <li style="padding:3px 0;">– Woran erkennt man, ob eine Entscheidung langfristig tragfähig ist?</li>
-              </ul>
+              <p style="margin:0 0 16px 0;">Im Webinar ordnen wir genau solche Fragen strukturiert ein.</p>
 
-              <p style="margin:0 0 16px 0;">Im Webinar geht es darum, genau solche Fragen strukturiert einzuordnen.</p>
+              <p style="margin:0 0 16px 0;">Gerne einige Minuten vor Beginn eintreten – damit der Start entspannt erfolgt.</p>
 
-              <p style="margin:0 0 20px 0;">Nicht über einzelne Angebote oder schnelle Entscheidungen – sondern über die Grundlagen, die hinter einer tragfähigen Immobilienentscheidung stehen.</p>
-
-              <p style="margin:0 0 8px 0;font-weight:bold;">Kleiner organisatorischer Hinweis</p>
-              <p style="margin:0 0 20px 0;">Viele Teilnehmer empfinden es als hilfreich, einige Minuten vor Beginn in den Webinarraum zu kommen, damit der Start ganz entspannt erfolgen kann.</p>
-
-              <p style="margin:0 0 8px 0;">&#8594; Nutzen Sie diesen Link, um direkt am Webinar teilzunehmen:</p>
               <p style="margin:0 0 20px 0;">
-                <a href="{{appointment.meeting_location}}" style="color:#0b5cab;text-decoration:underline;font-weight:bold;">Jetzt am Webinar teilnehmen</a>
+                <a href="{{appointment.meeting_location}}" style="color:#c0392b;text-decoration:underline;font-weight:bold;">&#8594; Jetzt am Webinar teilnehmen</a>
               </p>
 
-              <p style="margin:0 0 16px 0;">Wir freuen uns darauf, Sie heute um {{appointment.only_start_time}} Uhr live im Webinar zu begrüßen.</p>
-
-              <p style="margin:0 0 4px 0;">Herzliche Grüße<br>Sabine und Thomas Schulz<br><strong>Endlich zu Hause Immobilien</strong></p>
+              <p style="margin:0 0 4px 0;">Herzliche Grüße</p>
+              <p style="margin:0 0 4px 0;"><strong>Sabine und Thomas Schulz</strong></p>
+              <p style="margin:0;"><strong>Endlich zu Hause Immobilien</strong></p>
             </td>
           </tr>
           <!-- Footer -->

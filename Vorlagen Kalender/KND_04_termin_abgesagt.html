@@ -10,6 +10,15 @@
   <div style="display:none;font-size:1px;line-height:1px;max-height:0;opacity:0;overflow:hidden;mso-hide:all;">
     Schade: Termin storniert oder nicht wahrgenommen – so sichern Sie sich Ihr Beratungsgespräch.
   </div>
+
+  <!-- View in browser -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f5f5f5;" bgcolor="#f5f5f5">
+    <tr>
+      <td align="center" style="padding:10px 12px 0 12px;font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:1.4;color:#777777;">
+        Probleme bei der Darstellung? <a href="{{email.view_in_browser_url}}" style="color:#555555;text-decoration:underline;">E-Mail im Browser öffnen</a>
+      </td>
+    </tr>
+  </table>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;">
     <tr>
       <td align="center" style="padding:40px 12px;">
@@ -25,7 +34,7 @@
           </tr>
           <tr>
             <td style="padding:28px 28px 8px 28px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#333;">
-              <p style="margin:0 0 16px 0;">Hallo {{contact.first_name}},</p>
+              <p style="margin:0 0 16px 0;">Hallo {{contact.first_name}} {{contact.last_name}},</p>
               <p style="margin:0 0 16px 0;">Ihr Termin konnte heute nicht stattfinden – entweder wurde er storniert oder nicht wahrgenommen.</p>
               <p style="margin:0 0 12px 0;">Damit Sie nichts verpassen, das hätten wir im Gespräch für Sie geklärt:</p>
               <ul style="padding-left:18px;margin:0 0 18px 0;">

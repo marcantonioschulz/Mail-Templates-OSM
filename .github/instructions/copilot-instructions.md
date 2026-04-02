@@ -67,7 +67,7 @@ Use this sequence for every template create/update task unless the user requests
 
 ## Example Merge Fields
 ```html
-<p>Hallo {{contact.first_name}}, Ihr Termin ist am {{appointment.start_time}}.</p>
+<p>Hallo {{contact.first_name}} {{contact.last_name}}, Ihr Termin ist am {{appointment.start_time}}.</p>
 <a href="{{appointment.cancellation_link}}">Termin absagen</a>
 ```
 

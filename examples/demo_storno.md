@@ -19,7 +19,7 @@ Betreff: Termin abgesagt – Endlich zu Hause
 
 ---
 
-Hallo {{contact.first_name}},
+Hallo {{contact.first_name}} {{contact.last_name}},
 
 wir haben Ihre Absage für folgenden Termin erhalten:
 

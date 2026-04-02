@@ -19,7 +19,7 @@ Betreff: Ihr Termin ist bestätigt – Endlich zu Hause
 
 ---
 
-Hallo {{contact.first_name}},
+Hallo {{contact.first_name}} {{contact.last_name}},
 
 vielen Dank für Ihr Vertrauen! Wir bestätigen hiermit Ihren Termin:
 
